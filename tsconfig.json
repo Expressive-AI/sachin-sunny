@@ -1,0 +1,31 @@
+{
+  "include": ["client/src/**/*"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "**/*.test.ts",
+  "client/src/components/ui/form.tsx",
+  "client/src/components/ui/sidebar.tsx",
+  "client/src/components/ui/pagination.tsx",
+  "client/src/components/ui/alert-dialog.tsx"
+  ],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+    "module": "ESNext",
+    "strict": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+  "@/*": ["./client/src/*"]
+    }
+  }
+}
