@@ -75,10 +75,16 @@ export default function FloatingNavigation({ activeSection }: FloatingNavigation
           <Download size={16} />
           <span>Resume</span>
         </a>
-        <div className="hidden sm:flex items-center gap-1.5 pl-3 ml-1 border-l text-xs text-muted-foreground">
+        <a
+          href="https://expressiveai.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:flex items-center gap-1.5 pl-3 ml-1 border-l text-xs text-muted-foreground hover:text-primary transition-colors"
+          aria-label="Built with Expressive AI"
+        >
           <img src="/logo.png" alt="Expressive AI logo" className="h-4 w-4 rounded-sm" />
-          <span className="whitespace-nowrap">Built with Expressive AI</span>
-        </div>
+          <span className="whitespace-nowrap underline-offset-2 hover:underline">Built with Expressive AI</span>
+        </a>
       </div>
 
       <div className="md:hidden flex items-center justify-center">
@@ -110,7 +116,20 @@ export default function FloatingNavigation({ activeSection }: FloatingNavigation
             } absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 w-[min(95vw,24rem)] rounded-xl border border-border bg-card shadow-xl transition-all duration-200 ease-out origin-top`}
             role="menu"
           >
-            <div className="grid gap-1 p-2">
+            {/* Built with link - shown just under the button in mobile dropdown */}
+            <a
+              href="https://expressiveai.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="m-2 mb-1 flex items-center gap-2 rounded-md px-3 py-2 text-xs text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
+              role="menuitem"
+              aria-label="Built with Expressive AI"
+            >
+              <img src="/logo.png" alt="Expressive AI logo" className="h-4 w-4 rounded-sm" />
+              <span className="font-mono">Built with Expressive AI</span>
+            </a>
+            <div className="grid gap-1 p-2 pt-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
