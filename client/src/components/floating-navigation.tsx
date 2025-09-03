@@ -56,7 +56,7 @@ export default function FloatingNavigation({ activeSection }: FloatingNavigation
           <button
             key={item.href}
             onClick={() => scrollToSection(item.href)}
-            className={`font-mono text-sm font-medium transition-colors hover:text-primary ${
+            className={`font-mono text-sm font-medium rounded-md px-2 py-1 transition-all duration-200 hover:bg-amber-100/70 dark:hover:bg-amber-900/30 hover:text-amber-800 dark:hover:text-amber-100 ${
               activeSection === item.href.substring(1)
                 ? "text-primary font-semibold"
                 : "text-foreground"
@@ -134,10 +134,10 @@ export default function FloatingNavigation({ activeSection }: FloatingNavigation
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`w-full text-left rounded-md px-3 py-2 font-mono text-sm transition-colors ${
+                  className={`w-full text-left rounded-md px-3 py-2 font-mono text-sm transition-all duration-200 ${
                     activeSection === item.href.substring(1)
                       ? "bg-primary/10 text-primary"
-                      : "hover:bg-muted text-foreground"
+                      : "text-foreground hover:bg-amber-100/70 dark:hover:bg-amber-900/30 hover:text-amber-800 dark:hover:text-amber-100"
                   }`}
                 >
                   {item.label}
